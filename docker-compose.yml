@@ -18,13 +18,13 @@ services:
         environment:
             SHARELATEX_MONGO_URL: mongodb://mongo/sharelatex
             SHARELATEX_REDIS_HOST: redis
-            SHARELATEX_APP_NAME: 'Our ShareLaTeX'
+            SHARELATEX_APP_NAME: 'LCAS ShareLaTeX'
             
             #Set for SSL via nginx-proxy
             #VIRTUAL_HOST: 103.112.212.22
 
-            SHARELATEX_SITE_URL: "https://lcas.licolnc.ac.uk/sharelatex"
-            # SHARELATEX_NAV_TITLE: "LCAS ShareLaTeX Instance"
+            # SHARELATEX_SITE_URL: "https://lcas.licolnc.ac.uk/sharelatex"
+            SHARELATEX_NAV_TITLE: "LCAS ShareLaTeX Instance"
             # SHARELATEX_HEADER_IMAGE_URL: "http://somewhere.com/mylogo.png"
             # SHARELATEX_ADMIN_EMAIL: "support@it.com"
 
@@ -36,14 +36,14 @@ services:
             # SHARELATEX_EMAIL_AWS_SES_ACCESS_KEY_ID: ""
             # SHARELATEX_EMAIL_AWS_SES_SECRET_KEY: ""
 
-            # SHARELATEX_EMAIL_SMTP_HOST: "smtp.mydomain.com"
-            # SHARELATEX_EMAIL_SMTP_PORT: 587
-            # SHARELATEX_EMAIL_SMTP_SECURE: 'false'
+            SHARELATEX_EMAIL_SMTP_HOST: "mailslot.lincoln.ac.uk"
+            SHARELATEX_EMAIL_SMTP_PORT: 25
+            SHARELATEX_EMAIL_SMTP_SECURE: 'false'
             # SHARELATEX_EMAIL_SMTP_USER: ""
             # SHARELATEX_EMAIL_SMTP_PASS: ""
             # SHARELATEX_EMAIL_SMTP_TLS_REJECT_UNAUTH: 'true'
             # SHARELATEX_EMAIL_SMTP_IGNORE_TLS: 'false'
-            # SHARELATEX_CUSTOM_EMAIL_FOOTER:"<div>This system is run by department x </div>"
+            SHARELATEX_CUSTOM_EMAIL_FOOTER: "<div>This system is run by LCAS</div>"
 
             ################
             ## Server Pro ##
