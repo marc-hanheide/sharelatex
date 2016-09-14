@@ -9,7 +9,7 @@ services:
             - redis
         privileged: true
         ports:
-            - 80:80
+            - 5001:80
         links:
             - mongo
             - redis
@@ -23,8 +23,8 @@ services:
             #Set for SSL via nginx-proxy
             #VIRTUAL_HOST: 103.112.212.22
 
-            # SHARELATEX_SITE_URL: "http://sharelatex.mydomain.com"
-            # SHARELATEX_NAV_TITLE: "Our ShareLaTeX Instance"
+            SHARELATEX_SITE_URL: "https://lcas.licolnc.ac.uk/sharelatex"
+            # SHARELATEX_NAV_TITLE: "LCAS ShareLaTeX Instance"
             # SHARELATEX_HEADER_IMAGE_URL: "http://somewhere.com/mylogo.png"
             # SHARELATEX_ADMIN_EMAIL: "support@it.com"
 
