@@ -16,6 +16,7 @@ services:
         volumes:
             - /srv/sharelatex/sharelatex_data:/var/lib/sharelatex
             - /var/run/docker.sock:/var/run/docker.sock
+            - /srv/sharelatex/texlive:/usr/local/texlive
             #- /var/clsi/compiles:/var/www/sharelatex/clsi/compiles
         environment:
             SHARELATEX_MONGO_URL: mongodb://mongo/sharelatex
@@ -27,7 +28,7 @@ services:
             SHARELATEX_SECURE_COOKIE: 'true'
             SHARELATEX_BEHIND_PROXY: 'true'
             SHARELATEX_SITE_URL: https://latex.lcas.group
-            SHARELATEX_NAV_TITLE: L-CAS ShareLaTeX
+            SHARELATEX_NAV_TITLE: 'L-CAS ShareLaTeX'
             SHARELATEX_HEADER_IMAGE_URL: https://i0.wp.com/lcas.lincoln.ac.uk/wp/wp-content/uploads/2012/05/cropped-lcas_logo_150dpi-720x987.png
             SHARELATEX_ADMIN_EMAIL: mhanheide@lincoln.ac.uk
 
@@ -47,6 +48,8 @@ services:
             # SHARELATEX_EMAIL_SMTP_TLS_REJECT_UNAUTH: true
             # SHARELATEX_EMAIL_SMTP_IGNORE_TLS: false
             SHARELATEX_CUSTOM_EMAIL_FOOTER: "<div>This system is run by L-CAS</div>"
+            SHARELATEX_ALLOW_PUBLIC_ACCESS: 'true'
+            SHARELATEX_ALLOW_ANONYMOUS_READ_AND_WRITE_SHARING: 'true'
 
             ################
             ## Server Pro ##
