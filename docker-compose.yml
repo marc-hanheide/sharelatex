@@ -21,7 +21,7 @@ services:
         environment:
             SHARELATEX_MONGO_URL: mongodb://mongo/sharelatex
             SHARELATEX_REDIS_HOST: redis
-            SHARELATEX_APP_NAME: Our ShareLaTeX
+            SHARELATEX_APP_NAME: L-CAS ShareLaTeX
             
             ## Set for SSL via nginx-proxy
             #VIRTUAL_HOST: 10.210.9.146
