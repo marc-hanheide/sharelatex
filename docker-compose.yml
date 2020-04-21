@@ -2,7 +2,7 @@ version: '2'
 services:
     sharelatex:
         restart: always
-        image: sharelatex/sharelatex
+        image: sharelatex/sharelatex:2.2.0
         container_name: sharelatex
         depends_on:
             - mongo
@@ -15,14 +15,18 @@ services:
             - redis
         volumes:
             - /srv/sharelatex/sharelatex_data:/var/lib/sharelatex
-            - /var/run/docker.sock:/var/run/docker.sock
-            - /srv/sharelatex/texlive:/usr/local/texlive
+#            - /var/run/docker.sock:/var/run/docker.sock
+#            - /srv/sharelatex/texlive:/usr/local/texlive
             #- /var/clsi/compiles:/var/www/sharelatex/clsi/compiles
         environment:
             SHARELATEX_MONGO_URL: mongodb://mongo/sharelatex
             SHARELATEX_REDIS_HOST: redis
+            REDIS_HOST: redis
             SHARELATEX_APP_NAME: L-CAS ShareLaTeX
-            
+            ENABLED_LINKED_FILE_TYPES: 'url,project_file'
+            ENABLE_CONVERSIONS: 'true'
+            EMAIL_CONFIRMATION_DISABLED: 'true'
+        
             ## Set for SSL via nginx-proxy
             #VIRTUAL_HOST: 10.210.9.146
             SHARELATEX_SECURE_COOKIE: 'true'
@@ -77,7 +81,7 @@ services:
 
     mongo:
         restart: always
-        image: mongo
+        image: mongo:3.4
         container_name: mongo
         expose:
             - 27017
